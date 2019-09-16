@@ -23,16 +23,16 @@ Run the jar and apply it to Eclipse.
 
 
 
- Testing application
- ---------------  
+Testing application
+--------------- 
  
  - On Eclipse: Right-click on the src/test/java and Run As -> JUnit test  
  - On CLI: Run it with: mvn test  
  
  
  
- Built with:
- --------------- 
+Built with:
+--------------- 
 
 - Java 8
 - Spring Boot (2.1.8.RELEASE)
