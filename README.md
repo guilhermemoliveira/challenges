@@ -22,7 +22,7 @@ Run the jar and apply it to Eclipse.
 
  ## Testing application
  
- - On Eclipse: Right-click on the src/test/java and Run As -> JUnit test
+ - On Eclipse: Right-click on the src/test/java and Run As -> JUnit test  
  - On CLI: Run it with: mvn test  
  
  
