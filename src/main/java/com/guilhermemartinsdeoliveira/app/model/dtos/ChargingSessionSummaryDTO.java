@@ -3,11 +3,15 @@ package com.guilhermemartinsdeoliveira.app.model.dtos;
 import java.io.Serializable;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ChargingSessionSummaryDTO implements Serializable {
 	
 	@Getter(value = AccessLevel.NONE)
@@ -18,8 +22,4 @@ public class ChargingSessionSummaryDTO implements Serializable {
 	private Integer startedCount;
 	private Integer stoppedCount;
 	
-	public ChargingSessionSummaryDTO() {
-		
-	}
-
 }

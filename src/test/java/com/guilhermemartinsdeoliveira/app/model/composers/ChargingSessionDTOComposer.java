@@ -25,31 +25,12 @@ public class ChargingSessionDTOComposer {
 
 	public static String getStringJsonChargingSessionDTOWithFixedStartedAtDateAndNoStoppedAtDate() {
 		LocalDateTime time = LocalDateTime.now().withYear(2019).withMonth(9).withDayOfMonth(15).withHour(14)
-				.withMinute(50).withNano(688);
+				.withMinute(50).withSecond(14).withNano(688);
 
 		return "{" + "\"id\":\"08253dce-bf92-41dc-b592-1dd91d41bd5c\"," + "\"stationId\":\"ABC-12345\","
 				+ "\"startedAt\":\"" + time.toString() + "\"," + "\"stoppedAt\":\"" + time.plusDays(10).toString()
 				+ "\"," + "\"status\":\"IN_PROGRESS\"" + "}";
 
-	}
-
-	public static ChargingSessionDTO getChargingSessionWithoutDTOStoppedAtDate() {
-		LocalDateTime time = LocalDateTime.now().withYear(2019).withMonth(9).withDayOfMonth(15).withHour(14)
-				.withMinute(50).withSecond(14).withNano(688);
-
-		ChargingSession chargingSession = new ChargingSession(UUID.fromString("08253dce-bf92-41dc-b592-1dd91d41bd5c"),
-				"ABC-12345", time, StatusEnum.IN_PROGRESS);
-
-		return new ChargingSessionDTO(chargingSession);
-	}
-
-	public static ChargingSessionDTO getNewChargingSessionWithStationIdAndStatusEnum(String stationId,
-			StatusEnum statusEnum) {
-		LocalDateTime time = LocalDateTime.now();
-
-		ChargingSession chargingSession = new ChargingSession(UUID.randomUUID(), stationId, time, statusEnum);
-
-		return new ChargingSessionDTO(chargingSession);
 	}
 
 	public static ChargingSessionDTO getChargingSessionWithOnlyStationId(String stationId) {

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.guilhermemartinsdeoliveira.app.model.constants.ChargingSessionRoute;
 import com.guilhermemartinsdeoliveira.app.model.dtos.ChargingSessionDTO;
@@ -37,24 +36,19 @@ public class ChargingSessionController {
 
 	@PutMapping(ChargingSessionRoute.ROUTE_STOP_CHARGING_SESSION)
 	public ResponseEntity<ChargingSessionDTO> stopChargingSession(@PathVariable @Valid @NotNull UUID id) {
-		
+
 		Optional<ChargingSessionDTO> response = chargingSessionService.stopChargingSessionById(id);
-		
-		if (response.isPresent()) {
 		return new ResponseEntity<>(response.get(), HttpStatus.OK);
-		} else {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Charging Session not found.");
-		}
 	}
 
 	@GetMapping(ChargingSessionRoute.ROUTE_GET_ALL_CHARGING_SESSION)
-	public List<ChargingSessionDTO> getAllChargingSessions() {
-		return null;
+	public ResponseEntity<List<ChargingSessionDTO>> getAllChargingSessions() {
+		return new ResponseEntity<>(chargingSessionService.getAllChargingSessions(), HttpStatus.OK);
 	}
 
 	@GetMapping(ChargingSessionRoute.ROUTE_GET_CHARGING_SESSION_SUMMARY)
-	public ChargingSessionSummaryDTO getChargingSessionSummaryDTO() {
-		return null;
+	public ResponseEntity<ChargingSessionSummaryDTO> getChargingSessionSummaryDTO() {
+		return new ResponseEntity<>(chargingSessionService.getChargingSessionsSummary(), HttpStatus.OK);
 	}
 
 }
