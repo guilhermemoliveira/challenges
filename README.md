@@ -2,7 +2,7 @@
 
 Code assignment for EV-Box Backend Engineer job. Services and a few methods   
 are documented to explain better what they are determined to accomplish.  
-
+  
 
 
 ## Running application  
