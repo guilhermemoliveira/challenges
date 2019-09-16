@@ -1,4 +1,4 @@
-package com.guilhermemartinsdeoliveira.app.model.repository;
+package com.guilhermemartinsdeoliveira.app.repositories;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,10 +15,15 @@ import org.springframework.stereotype.Repository;
 import com.guilhermemartinsdeoliveira.app.model.entities.ChargingSession;
 import com.guilhermemartinsdeoliveira.app.model.enums.StatusEnum;
 
+/**
+ * @apiNote This class represents the ChargingSession's store, represented by a
+ *          synchronized HashMap, assuring that requests to it be thread-safe.
+ *
+ */
 @Repository
 public class ChargingSessionRepository {
 
-	private static Map<UUID, ChargingSession> chargingSessions;
+	private Map<UUID, ChargingSession> chargingSessions;
 
 	@Autowired
 	public ChargingSessionRepository() {
@@ -26,15 +31,20 @@ public class ChargingSessionRepository {
 	}
 
 	public ChargingSession insert(String stationId) {
-			ChargingSession chargingSession = this.createNewChargingSessionInProgress(stationId);
-			chargingSessions.put(chargingSession.getId(), chargingSession);
+		ChargingSession chargingSession = this.createNewChargingSessionInProgress(stationId);
+		chargingSessions.put(chargingSession.getId(), chargingSession);
 
 		return chargingSession;
 	}
 
+	/**
+	 * Method used to insert new ChargingSession in map, by stationId.
+	 * 
+	 * @param stationId
+	 * @return The just created ChargingSession.
+	 */
 	private ChargingSession createNewChargingSessionInProgress(String stationId) {
-		return new ChargingSession(UUID.randomUUID(), stationId, LocalDateTime.now(),
-				StatusEnum.IN_PROGRESS);
+		return new ChargingSession(UUID.randomUUID(), stationId, LocalDateTime.now(), StatusEnum.IN_PROGRESS);
 	}
 
 	public Optional<ChargingSession> findById(UUID id) {

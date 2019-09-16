@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.guilhermemartinsdeoliveira.app.model.constants.ChargingSessionRoute;
 import com.guilhermemartinsdeoliveira.app.model.dtos.ChargingSessionDTO;
 import com.guilhermemartinsdeoliveira.app.model.dtos.ChargingSessionSummaryDTO;
-import com.guilhermemartinsdeoliveira.app.service.ChargingSessionService;
+import com.guilhermemartinsdeoliveira.app.services.ChargingSessionService;
 
 @RestController
 public class ChargingSessionController {

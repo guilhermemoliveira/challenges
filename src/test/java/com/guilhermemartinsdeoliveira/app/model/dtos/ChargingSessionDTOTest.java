@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.guilhermemartinsdeoliveira.app.model.adapters.LocalDateTimeAdapter;
+import com.guilhermemartinsdeoliveira.app.config.adapters.LocalDateTimeAdapter;
 import com.guilhermemartinsdeoliveira.app.model.composers.ChargingSessionDTOComposer;
 
 @SpringBootTest

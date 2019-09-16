@@ -1,4 +1,4 @@
-package com.guilhermemartinsdeoliveira.app.config;
+package com.guilhermemartinsdeoliveira.app.config.serializers;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.guilhermemartinsdeoliveira.app.model.adapters.LocalDateTimeAdapter;
+import com.guilhermemartinsdeoliveira.app.config.adapters.LocalDateTimeAdapter;
 
 @Configuration
 public class GsonApplicationConfig implements WebMvcConfigurer {

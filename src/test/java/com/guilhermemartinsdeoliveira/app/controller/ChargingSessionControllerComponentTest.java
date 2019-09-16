@@ -39,8 +39,8 @@ import com.guilhermemartinsdeoliveira.app.model.dtos.ChargingSessionDTO;
 import com.guilhermemartinsdeoliveira.app.model.dtos.ChargingSessionSummaryDTO;
 import com.guilhermemartinsdeoliveira.app.model.entities.ChargingSession;
 import com.guilhermemartinsdeoliveira.app.model.enums.StatusEnum;
-import com.guilhermemartinsdeoliveira.app.model.repository.ChargingSessionRepository;
-import com.guilhermemartinsdeoliveira.app.service.ChargingSessionService;
+import com.guilhermemartinsdeoliveira.app.repositories.ChargingSessionRepository;
+import com.guilhermemartinsdeoliveira.app.services.ChargingSessionService;
 import com.guilhermemartinsdeoliveira.app.utils.GsonUtils;
 
 @RunWith(SpringRunner.class)

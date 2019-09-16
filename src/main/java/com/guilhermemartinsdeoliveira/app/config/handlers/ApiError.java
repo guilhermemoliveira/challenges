@@ -1,4 +1,4 @@
-package com.guilhermemartinsdeoliveira.app.handler;
+package com.guilhermemartinsdeoliveira.app.config.handlers;
 
 import java.time.LocalDateTime;
 import java.util.List;

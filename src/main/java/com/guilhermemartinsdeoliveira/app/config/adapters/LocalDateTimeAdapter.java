@@ -1,4 +1,4 @@
-package com.guilhermemartinsdeoliveira.app.model.adapters;
+package com.guilhermemartinsdeoliveira.app.config.adapters;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
