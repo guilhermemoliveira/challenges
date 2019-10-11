@@ -38,3 +38,4 @@ Built with:
 - Spring Boot (2.1.8.RELEASE)
 - Google Gson (2.8.5)
 - Lombok (1.18.10)
+- Maven (3.3.9)
