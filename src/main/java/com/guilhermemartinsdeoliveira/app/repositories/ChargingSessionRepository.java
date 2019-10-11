@@ -3,7 +3,7 @@ package com.guilhermemartinsdeoliveira.app.repositories;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -17,7 +17,7 @@ import com.guilhermemartinsdeoliveira.app.model.enums.StatusEnum;
 
 /**
  * @apiNote This class represents the ChargingSession's store, represented by a
- *          synchronized HashMap, assuring that requests to it be thread-safe.
+ *          ConcurrentHashMap, assuring that requests to it be thread-safe in atomic operations.
  *
  */
 @Repository
@@ -27,7 +27,7 @@ public class ChargingSessionRepository {
 
 	@Autowired
 	public ChargingSessionRepository() {
-		chargingSessions = Collections.synchronizedMap(new HashMap<>());
+		chargingSessions = new ConcurrentHashMap<>();
 	}
 
 	public ChargingSession insert(String stationId) {
